@@ -14,6 +14,8 @@ jobs:
 
       - name: Build
         uses: sosedoff/actions/golang-build@master
+        env:
+          COMPRESS_FILES: 1
         with:
           args: linux/amd64 darwin/amd64 windows/amd64
 

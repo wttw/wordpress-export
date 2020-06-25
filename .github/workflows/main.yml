@@ -40,7 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./wordpress-export_linux_amd64.zip
+          asset_path: .release/wordpress-export_linux_amd64.zip
           asset_name: wordpress-export_linux_amd64.zip
           asset_content_type: application/zip
 
@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./wordpress-export_windows_amd64.zip
+          asset_path: .release/wordpress-export_windows_amd64.zip
           asset_name: wordpress-export_windows_amd64.zip
           asset_content_type: application/zip
 
@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./wordpress-export_darwin_amd64.zip
+          asset_path: .release/wordpress-export_darwin_amd64.zip
           asset_name: wordpress-export_darwin_amd64.zip
           asset_content_type: application/zip
 

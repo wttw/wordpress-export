@@ -45,7 +45,7 @@ func init() {
 	flag.BoolVar(&saveMeta, "meta", false, "save tags, categories and authors")
 	flag.StringVar(&apiUrl, "api", "", "Base URL of the WordPress API")
 	flag.StringVarP(&dest, "output", "o", "./output", "Save results to this directory")
-	flag.StringVar(&prefix, "prefix", "", "")
+	flag.StringVar(&prefix, "prefix", "", "Strip this prefix off post paths")
 	flag.StringVar(&logFile, "log", "", "Log progress to this file")
 	flag.StringVar(&wpUploads, "assets", "/wp-content/uploads/", "Copy assets under this path")
 	flag.BoolVarP(&quiet, "quiet", "q", false, "Don't print progress")

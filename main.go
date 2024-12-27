@@ -315,7 +315,7 @@ func localAsset(assetUrl string, sourceUrl *url.URL) *Asset {
 	return nil
 }
 
-var plausibleSuffixRe = regexp.MustCompile(`\.(png|jpg|gif|pdf|jpeg)$`)
+var plausibleSuffixRe = regexp.MustCompile(`\.(png|jpg|gif|pdf|jpeg|webp)$`)
 
 func fetchAsset(asset *Asset, dir string) string {
 	if !strings.HasPrefix(strings.ToLower(asset.Url.Path), wpUploads) {
@@ -627,7 +627,7 @@ func info(format string, a ...interface{}) {
 func warn(format string, a ...interface{}) {
 	msg := fmt.Sprintf(format, a...) + "\n"
 	if logWriter != nil {
-		_, _ = io.WriteString(logWriter, "WARN: " + msg)
+		_, _ = io.WriteString(logWriter, "WARN: "+msg)
 	}
 	if !silent {
 		skipStatus()
@@ -639,7 +639,7 @@ func warn(format string, a ...interface{}) {
 func fatal(format string, a ...interface{}) {
 	msg := fmt.Sprintf(format, a...) + "\n"
 	if logWriter != nil {
-		_, _ = io.WriteString(logWriter, "FATAL: " + msg)
+		_, _ = io.WriteString(logWriter, "FATAL: "+msg)
 	}
 	skipStatus()
 	color.Red.Print("ERROR: ")
